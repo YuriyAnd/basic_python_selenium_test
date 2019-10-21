@@ -20,13 +20,11 @@ newUser.create_New_Account()
 NewUserPageEls = NewUserPageElements(driver)
 NewUserPageEls.userDataElements()
 
-# try:
-#     assert validation_Size_Error_Message in driver.page_source
-#     print ("Password size error")
-# except AssertionError:
-#     assert validation_PassNotMatch_Error_Message in driver.page_source
-#     print ("Password Confirmation error")
-#     # except AssertionError:
-#     # print('Not cathced!')
+try:
+     assert validation_Size_Error_Message in driver.page_source
+     print ("Password size error")
+except AssertionError:
+     assert validation_PassNotMatch_Error_Message in driver.page_source
+     print ("Password Confirmation error")
 driver.quit()
 
