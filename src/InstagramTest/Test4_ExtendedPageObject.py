@@ -1,9 +1,7 @@
 import time
 
 from selenium import webdriver
-from src.pages.Test4_InstLoginPage import LoginPage
-from src.pages.Test4_InstMainPage import MainPage
-from src.pages.Test4_SearchResultPage import SearchResultPage
+from src.InstagramTest.pages.Test4_InstLoginPage import LoginPage
 
 validation_PassNotMatch_Error_Message = 'Sorry, your password was incorrect. Please double-check your password.'
 
