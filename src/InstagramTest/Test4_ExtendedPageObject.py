@@ -14,6 +14,7 @@ loginPage.enter_username("pyautomation")
 loginPage.enter_password("Ab123456!")
 loginPage.login()
 time.sleep(1)
+
 # Commented because of login error with credentials
 # main_page = MainPage(driver)
 # main_page.click_not_now_button()
@@ -22,6 +23,7 @@ time.sleep(1)
 # search_page = SearchResultPage(driver)
 # time.sleep(5)
 # assert "Follow" in search_page.get_follow_button_text
+
 
 try:
       assert validation_PassNotMatch_Error_Message in driver.page_source

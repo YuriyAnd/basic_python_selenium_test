@@ -11,28 +11,21 @@ class KioskPreLoginPage(BasePage):
     # Login form elements.
     # https://checkin-stg.usaveinclinics.net/operator/login
     #         result = (By.XPATH, "//span[text()='{}']".format(text))
-    login = "***"
-    password = "***"
-    FIELD_USERNAME = (By.NAME, "username")
-    INPUT_LOGIN = By.ID('login')
-    # inpLogin = (By.XPATH('//input[@id="login"]'))
-    inpPassword = (By.XPATH("//input[@id='password']"))
-    # btnLogin = (By.XPATH("//div[3]/button"))
-    # errLogin = (By.XPATH("//p[@id='password-helper-text']"))
-    # btnIllinois = (By.XPATH("//div[contains(text(),'Illinois')]"))  # Select state
-    # btnNorthShore = (By.XPATH("//body//div[contains(text(),'North Sh') and not(contains(text(),'Mun'))]"))  # Select location
-    # btnCameraOk = (By.XPATH("//*[contains(text(),'OK')]"))  #Camera test
+    login_v = "intetics"
+    password_v = "Development-2017"
+    inpLogin = (By.ID, 'login')
+    inpPassword = (By.XPATH, "//input[@id='password']")
+    btnLogin = (By.XPATH, "//div[3]/button")
+    # errLogin = (By.XPATH, "//p[@id='password-helper-text']")
+    btnIllinois = (By.XPATH, "//div[contains(text(),'Illinois')]")  # Select state
+    btnNorthShore = (By.XPATH, "//body//div[contains(text(),'North Sh') and not(contains(text(),'Mun'))]")  # Select location
+    btnCameraOk = (By.XPATH, "//*[contains(text(),'OK')]")  #Camera test
 
-
-    # basepage = new BasePage
-    # BasePage.get_element(inpLogin).send_keys(login)
-    # BasePage.type_in(inpPassword, password)
-    # BasePage.click_on(btnLogin)
-
-
-    def login(self):
-        self.type_in(self.INPUT_LOGIN, self.login)
-        self.type_in(self.inpPassword, self.password)
+    def prelogin(self):
+        self.type_in(self.inpLogin, self.login_v)
+        self.type_in(self.inpPassword, self.password_v)
         self.click_on(self.btnLogin)
-        # self.driver.get_element_by_xpath("//div[3]/button").click()
-        # WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable).click()
+        self.click_on(self.btnIllinois)
+        self.click_on(self.btnNorthShore)
+        self.get_element(self.btnCameraOk)
+        self.click_on(self.btnCameraOk)

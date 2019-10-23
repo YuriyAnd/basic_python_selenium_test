@@ -12,6 +12,10 @@ class BasePage():
         expected_condition = ec.presence_of_element_located(locator)
         return WebDriverWait(self.driver, 10).until(expected_condition, message="Unable to locate element")
 
+    def non_exist_element(self, locator):
+        expected_condition = not ec.presence_of_element_located(locator)
+        return WebDriverWait(self.driver, 10).until(expected_condition, message="'Error message' is exist")
+
     def get_clickable_element(self, locator):
         expected_condition = ec.element_to_be_clickable(locator)
         return WebDriverWait(self.driver, 10).until(expected_condition, message="Unable to locate clickable element")
