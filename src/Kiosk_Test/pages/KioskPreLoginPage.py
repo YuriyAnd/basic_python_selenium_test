@@ -11,8 +11,8 @@ class KioskPreLoginPage(BasePage):
     # Login form elements.
     # https://checkin-stg.usaveinclinics.net/operator/login
     #         result = (By.XPATH, "//span[text()='{}']".format(text))
-    login = "intetics"
-    password = "Development-2017"
+    login = "***"
+    password = "***"
     FIELD_USERNAME = (By.NAME, "username")
     INPUT_LOGIN = By.ID('login')
     # inpLogin = (By.XPATH('//input[@id="login"]'))
