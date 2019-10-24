@@ -9,7 +9,7 @@ class KioskPreLoginPage(BasePage):
         self.driver = driver
 
     # Login form elements.
-    # https://checkin-stg.usaveinclinics.net/operator/login
+    # https://checkin.usaveinclinics.net/operator/login
     #         result = (By.XPATH, "//span[text()='{}']".format(text))
     login_v = "intetics"
     password_v = "Development-2017"
@@ -20,6 +20,7 @@ class KioskPreLoginPage(BasePage):
     btnIllinois = (By.XPATH, "//div[contains(text(),'Illinois')]")  # Select state
     btnNorthShore = (By.XPATH, "//body//div[contains(text(),'North Sh') and not(contains(text(),'Mun'))]")  # Select location
     btnCameraOk = (By.XPATH, "//*[contains(text(),'OK')]")  #Camera test
+    page = (By.TAG_NAME, "body")
 
     def prelogin(self):
         self.type_in(self.inpLogin, self.login_v)
@@ -29,3 +30,4 @@ class KioskPreLoginPage(BasePage):
         self.click_on(self.btnNorthShore)
         self.get_element(self.btnCameraOk)
         self.click_on(self.btnCameraOk)
+        self.alrt_close()

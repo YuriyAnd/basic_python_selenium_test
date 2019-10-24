@@ -1,4 +1,5 @@
 import time
+import logging
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
@@ -29,3 +30,12 @@ class BasePage():
 
     def get_text(self, locator):
         return self.get_element(locator).text
+
+    def alrt_close(self):
+        try:
+            WebDriverWait(self, 1).until(ec.alert_is_present(),
+                                         'Timed out waiting for Alert creation ' +
+                                         'confirmation popup to appear.')
+            self.switch_to.alert.accept()
+        except:
+            print("Alert Not Found.")
